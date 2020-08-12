@@ -2,10 +2,11 @@
 // define a call name App for all the primary class of Student Grade Table
 
 class App { 
-    constructor(gradeTable){ 
+    constructor(gradeTable, pageHeader){ 
         this.handleGetGradesError = this.handleGetGradesError.bind(this); 
         this.handleGetGradeSuccess = this.handleGetGradeSuccess.bind(this);
         this.gradeTable = gradeTable;
+        this.pageHeader = pageHeader;
 
     }
     handleGetGradesError(error){ 
