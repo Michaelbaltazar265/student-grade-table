@@ -22,7 +22,7 @@ class App {
             //console.log(sum/grades.length);
         }
         var gradeAverage = Math.round(sum/grades.length);
-        console.log(gradeAverage);
+        //console.log(gradeAverage);
         this.pageHeader.updateAverage(gradeAverage);
 
     };
@@ -40,6 +40,3 @@ class App {
         this.getGrades();
     }
 }  
-
-
-// console.log("hello world");
