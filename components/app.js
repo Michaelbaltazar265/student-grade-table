@@ -2,9 +2,10 @@
 // define a call name App for all the primary class of Student Grade Table
 
 class App { 
-    constructor(){ 
+    constructor(gradeTable){ 
         this.handleGetGradesError = this.handleGetGradesError.bind(this); 
         this.handleGetGradeSuccess = this.handleGetGradeSuccess.bind(this);
+        this.gradeTable = gradeTable;
 
     }
     handleGetGradesError(error){ 
@@ -12,6 +13,7 @@ class App {
     } 
     handleGetGradeSuccess(grades){ 
         console.log(grades);
+        this.gradeTable.updateGrades(grades);
     } 
     getGrades(){ 
         $.ajax({ 
