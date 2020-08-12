@@ -10,11 +10,11 @@ class App {
     }
     handleGetGradesError(error){ 
         console.error(error);
-    } 
+    };
     handleGetGradeSuccess(grades){ 
-        console.log(grades);
+        //console.log(grades);
         this.gradeTable.updateGrades(grades);
-    } 
+    };
     getGrades(){ 
         $.ajax({ 
             method: "GET", 
@@ -22,9 +22,7 @@ class App {
             success: this.handleGetGradeSuccess, 
             error: this.handleGetGradesError, 
             data: "none",
-            headers: { 
-                "X-Access-Token": "tenYnVPr"
-            },
+            headers: {"X-Access-Token": "tenYnVPr"},
         })
     }
     start(){ 
@@ -32,4 +30,4 @@ class App {
     }
 } 
 
-console.log("hello world");
+// console.log("hello world");
