@@ -11,10 +11,20 @@ class App {
     }
     handleGetGradesError(error){ 
         console.error(error);
-    };
+    }; 
     handleGetGradeSuccess(grades){ 
         //console.log(grades);
         this.gradeTable.updateGrades(grades);
+        var sum = 0;
+        for (var i = 0; i < grades.length; i++){ 
+            //console.log(grades[i].grade);
+            sum += grades[i].grade;
+            //console.log(sum/grades.length);
+        }
+        var gradeAverage = Math.round(sum/grades.length);
+        console.log(gradeAverage);
+        this.pageHeader.updateAverage(gradeAverage);
+
     };
     getGrades(){ 
         $.ajax({ 
@@ -29,6 +39,7 @@ class App {
     start(){ 
         this.getGrades();
     }
-} 
+}  
+
 
 // console.log("hello world");
